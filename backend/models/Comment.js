@@ -7,20 +7,20 @@ const CommentSchema = mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  content: {
+    type: String,
+    required: true,
+  },
   exhibitId: {
     type: Schema.Types.ObjectId,
     ref: 'Exhibit',
   },
-  responseTo: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  content: {
-    type: String,
-    required: true,
+  likes: {
+    type: Number,
+    default: 0,
   },
   },{
     timestamps: true
   });
 
-module.exports = Comment;
+module.exports = mongoose.model('Comment', CommentSchema);

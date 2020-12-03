@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import Brand from '../../../assets/images/etelage-logo.png';
@@ -21,23 +22,31 @@ const NavBar = () => {
               <Nav className="navbar-nav">
                 <Nav.Link 
                   className="nav-item"
-                  href="/home">
+                  >
+                  <Link to='/'>
                     HOME
+                  </Link>
                 </Nav.Link>
                 <Nav.Link 
                   className="nav-item"
-                  href="/exhibits">
-                    EXHIBITS
+                  >
+                  <Link to='/exhibit'>
+                    EXHIBIT
+                  </Link>
                 </Nav.Link>
                 <Nav.Link 
                   className="nav-item"
-                  href="/explore">
+                  >
+                  <Link to='/search'>
                     EXPLORE
+                  </Link>
                 </Nav.Link>
                 <Nav.Link 
                   className="nav-item"
-                  href="/profile">
+                  >
+                  <Link to='/user'>
                     PROFILE
+                  </Link>
                 </Nav.Link>
               </Nav>
               <Nav className="auth-nav">
