@@ -1,5 +1,7 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom'
+
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -31,7 +33,7 @@ const Profile = () => {
               xs={12} sm={12} lg={12} xl={12}
               className="prof-details">
               <h2 className="prof-name">{user.nickname}</h2>
-              <button className="edit-prof">EDIT ACCOUNT</button>
+              <button className="edit-prof"><Link to={{pathname: `/user/${user.id}/edit`}}>EDIT ACCOUNT</Link></button>
              </Col>
            </Row>
            <Row>

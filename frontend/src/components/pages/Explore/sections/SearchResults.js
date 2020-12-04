@@ -1,7 +1,5 @@
 import React from 'react';
 // import moment from 'moment';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 const SearchResults = ({data}) => {
   if(!data) return null
