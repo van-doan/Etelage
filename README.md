@@ -5,11 +5,10 @@ Etelage blends the concept of social media and art curation. Etelage members hav
 Etelage uses a handful of popular museum APIs and Artsy's largest artwork database giving users access to thousands of masterpieces created over time. 
 
 ## Index
-* Scope
-* User Stories
-* Wireframes
-* Data Models
-* Milestones
+* [Scope](#Scope)
+* [User Stories](#user-Stories)
+* [Wireframes](#wireframes)
+* [Coming soon...](#coming-soon)
 
 ## Scope
 Etelage's long-term objective is to become an immersive app where users can not only curate exhibits on the web or mobile, but also be able to view user exhibits in a virtual environment (to mimic the feeling as if they were viewing it physically).
@@ -61,3 +60,5 @@ Explore Artwork
 * Curate exhibits in a virtual setting
 * Algo development for feed customization
 * Mobile responsive
+
+### [Back to the Top](#Etelage)
