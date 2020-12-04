@@ -57,8 +57,9 @@ Explore Artwork
 
 ## Coming soon...
 * Full social interaction functionality (comments, likes, following, unfollowing)
-* Curate exhibits in a virtual setting
+* Curate exhibits in a virtual setting using React 360
+* Incorporate styling animations with Framer
 * Algo development for feed customization
-* Mobile responsive
+* Mobile responsiveness
 
 ### [Back to the Top](#Etelage)
