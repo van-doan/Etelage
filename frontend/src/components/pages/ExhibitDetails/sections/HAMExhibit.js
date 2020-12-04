@@ -10,7 +10,7 @@ function HAMExhibit(props) {
   return (
     <Container 
     fluid 
-    className="wexh-container">
+    className="wexh-container my-5">
         {data
           ? data.records.map((wexhibits) => (
               <HAMCard data={wexhibits} />

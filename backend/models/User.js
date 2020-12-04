@@ -7,6 +7,9 @@ const User = mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  image: {
+    type: String,
+  },
   exhibits: [{
     type: Schema.Types.ObjectId,
     ref: 'Exhibit',
@@ -19,7 +22,7 @@ const User = mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }],
-  following: [{
+  follower: [{
     type: Schema.Types.ObjectId,
     ref: 'User'
   }]

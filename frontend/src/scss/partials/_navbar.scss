@@ -18,7 +18,7 @@
     z-index: 1000;
     border-bottom-style: solid;
     border-width: thin;
-    border-color: #fff;
+    border-color: #000;
     .collapse.show {
         @include sm{
             display: flex !important;
@@ -47,7 +47,7 @@
         margin: 0 1rem;
     }
     .brand-logo {
-        filter: invert(0);
+        filter: invert(1);
         justify-self: flex-start;
         cursor: pointer;
         width: 90%;
@@ -63,7 +63,7 @@
         font-family: 'Trykker', serif;
         z-index: 1;
         a {
-            color: #fff !important;
+            color: #000;
         }
         .nav-item {
             letter-spacing: 1px;
@@ -89,10 +89,20 @@
                 margin-top: 1rem;
             }
         .nav-item-auth a {
-            color: #fff !important;
+            color: #000;
         }
         .nav-item-auth {
             margin-top: .7rem;
         }
     }
+}
+
+.navbar.active {
+    visibility: visible !important;
+    transition: all ease-in 0.5s;
+}
+.navbar.hidden {
+    visibility: hidden !important;
+    transition: all ease-in 0.5s;
+    transform: translateY(-100%);
 }

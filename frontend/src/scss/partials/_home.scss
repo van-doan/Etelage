@@ -1,0 +1,90 @@
+.home-parent{
+    height: 87vh;
+    font-family: 'Trykker', serif;
+    .home-row{
+        height:100%;
+        .home-column {
+            display: flex;
+            text-align: center; 
+            justify-content: center;
+            align-items: center;
+            border-right: solid;
+            border-right-width: thin;
+            .home-nav {
+                font-family: 'Trykker', serif;
+                a {
+                    color: #000;
+                }
+                .home-nav-item {
+                    margin: 1rem 0;
+                }
+            }
+        }
+        .home-results {
+                display: flex;
+                justify-content: center;
+                .feed-content, .profile-content, .notif-content, .rec-content {
+                    margin-top: 2rem;
+                }
+            }   
+    }
+}
+
+.user-pic {
+    width: 200px;
+}
+
+.user-col {
+    align-self: center;
+}
+
+.prof-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .prof-name, .edit-prof {
+        margin: 1rem 1rem;
+    }
+    .edit-prof {
+        padding: 0 5px;
+        font-size: .5rem;
+        height: 30%;
+        width: 100px;
+        background-color: transparent;
+        border-style: solid;
+        border-width: thin;
+    }
+}
+
+.prof-statistics {
+    text-align: center;
+    .prof-stats {
+        font-size: 12px;
+    }
+    .stat {
+        font-size: 1rem;
+        font-family: 'Source Code Pro', monospace; 
+        a {
+            color: #000;
+        }
+    }
+}
+
+.profile-row {
+    margin: 2rem 0;
+    border-top: solid;
+    border-top-width: thin;
+        .profile-nav{
+            padding: 1.5rem 0;
+            border-bottom: solid;
+            border-bottom-width: thin;
+            .prof-nav-item {
+                a {
+                    color: #000;
+                }
+            }
+        }
+        .prof-content {
+            margin-top: 1.5rem;
+        }
+}
