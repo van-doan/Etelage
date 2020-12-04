@@ -61,4 +61,4 @@ Explore Artwork
 * Algo development for feed customization
 * Mobile responsive
 
-[### Back to the Top](#Etelage)
+### [Back to the Top](#Etelage)
