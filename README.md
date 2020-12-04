@@ -24,7 +24,7 @@ Etelage's long-term objective is to become an immersive app where users can not 
 ### APIs
 * Harvard Art Museum API
 * MET Museum API
-* Arty API
+* Artsy API
 
 ## User Stories
 Etelage members experience a seamless sign up experience, have full access to search thousands of artworks, and are able to interact with a unique user base.
