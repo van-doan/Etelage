@@ -5,8 +5,8 @@ const commentRouter = require('./commentRoutes');
 
 const apiRouter = express.Router();
 
-apiRouter.route('/exhibit', exhibitRouter);
-apiRouter.route('/user', userRouter);
-apiRouter.route('/comments', commentRouter);
+apiRouter.use('/exhibit', exhibitRouter);
+apiRouter.use('/user', userRouter);
+apiRouter.use('/comments', commentRouter);
 
 module.exports = apiRouter;

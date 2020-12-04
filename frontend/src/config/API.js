@@ -1,5 +1,5 @@
 const axios = require("axios");
-const API_ENDPOINT = 'http://localhost:8000'
+const API_ENDPOINT = 'http://localhost:8000/api'
 const USER_URL = `${API_ENDPOINT}/user`
 const EXHIBIT_URL = `${API_ENDPOINT}/exhibit`
 // const COMMENT_URL = `${API_ENDPOINT}/comment`
@@ -16,23 +16,18 @@ const getUsers = () =>
     })
     )
 
-const getUserById = () => 
-  axios
-    .get(`${USER_URL}/${id}`
-    .then((res) => res.json())
-    .catch((err) =>  {
-      console.log(err)
-    })
-  )
+const getUserById = async (id) => 
+  {
+    let res = await axios
+    .get(`${USER_URL}/${id}`) 
+    return res.data;
+  }
+  
 
-const updateUser = (userDetails, id) => {
-  return axios
-  .get(`${USER_URL}/${id}`, {
-    method: "PUT",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(userDetails)
-  })
-  .then((res) => res.json())
+const updateUser = async (userDetails, id) => {
+  let res = await axios
+  .put(`${USER_URL}/${id}`, userDetails)
+  return res.data;
 }
 
 const deleteUser = id => {

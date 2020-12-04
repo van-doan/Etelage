@@ -22,9 +22,6 @@ app.use(cors({
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.route('/api', apiRouter);
-
 ////////////////////////
 // CONNECT TO MONGODB //
 ////////////////////////
@@ -34,6 +31,8 @@ const connectDB = require ('./config/db')
 // CONNECT TO DATABASE //
 /////////////////////////
 connectDB();
+
+app.use('/api', apiRouter);
 
 /////////////////////////
 // MORGAN LOGS FOR DEV //

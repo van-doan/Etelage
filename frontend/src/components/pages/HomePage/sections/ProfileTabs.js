@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
 
+import exampleImage from '../../../../assets/images/example-exhibit.jpg'
+
 const ProfileTabs = () => {
   return(
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -38,7 +40,17 @@ const ProfileTabs = () => {
             <Tab.Pane 
               eventKey="first"
               className="my-show-content">
-                User Created Exhibits Show Here
+                <div className="example-div">
+                  <a className="featured-link" href="#">
+                    <img className="example-img" alt="" src={exampleImage} />
+                  </a>
+                  <div className="example-overlay">
+                    <div className="featured-desc">
+                      <h3 className="featured-title">A Collection of Abloh</h3>
+                      <p className="featured-author">Curated by doan.andy</p>
+                    </div>
+                  </div>
+                </div>
             </Tab.Pane>
             <Tab.Pane 
               eventKey="second"

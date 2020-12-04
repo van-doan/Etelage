@@ -1,20 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import UserEditForm from '../components/pages/HomePage/forms/EditForm';
+import { Switch, Route } from 'react-router-dom';
+import EditForm from '../components/pages/HomePage/forms/EditForm';
 
 const UserRoutes = (props) => {
   return (
-    <Router>
       <Switch>
-        <Route path="/edit">
-            <UserEditForm />
-        </Route>
-        <Route path="/exhibit/new">
+        <Route path="/user/:id/edit" component={EditForm} />
+        {/* <Route path="/exhibit/new">
            <ExhibitForm user={this.props.user} />
-        </Route>
+        </Route> */}
       </Switch>
-    </Router>
   )
 }
 

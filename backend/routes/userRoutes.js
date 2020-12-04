@@ -11,7 +11,7 @@ const userRouter = express.Router();
 // @method  GET
 // @route   api/user/:id
 
-userRouter.get('/:id', async (req, res) => {
+userRouter.get('/:id/exhibit', async (req, res) => {
   await User.findOne({_id: req.params.id})
   .then(user=>{
     UserExhibit.find({user: req.params.id})
@@ -24,21 +24,26 @@ userRouter.get('/:id', async (req, res) => {
 // @method  GET
 // @route   api/user/:id
 userRouter.get('/:id', async (req, res) => {
-  let user = await User.findById({ user: req.params.id})
+  let user = await User.findById(req.params.id)
+    .populate("user")
   res.json(user)
   });
 
+// userRouter.get('/:id/edit', async (req, res) => {
+//   let user = await User.findById({ user: req.params.id})
+//   res.json(user)
+//   });
+
 // @desc     U => Edit User by Id
 // @method  PUT
-// @route   api/user/:id/update
-userRouter.put('/edit', async (req, res) => {
+// @route   api/user/:id/edit
+userRouter.put('/:id', async (req, res) => {
   let user = await User.findByIdAndUpdate(req.params.id, 
     {$set:
-      {image: req.body.image,
-        username: req.body.username}
-    }) 
+      {username: req.body.user.username}
+    }, {new: true}) 
   res.json(user)
-  })
+})
 
 // @desc    U => Update User When Following a User
 // @method  PUT
@@ -59,3 +64,6 @@ userRouter.put('/unfollow', async (req, res) => {
   },
   res.json(user));
 })
+
+
+module.exports = userRouter;

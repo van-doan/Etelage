@@ -15,7 +15,7 @@ exhibitRouter.get('/', (req, res) => {
 // @method  POST
 // @route   api/exhibit/
 exhibitRouter.post('/', async (req, res) => {
-  let exhibit = await UserExhibit.createExhibit({
+  let exhibit = await UserExhibit.create({
     title: req.body.title,
     description: req.body.description,
     user: req.user._id,
@@ -58,3 +58,4 @@ exhibitRouter.delete('/:id', async (req, res) => {
   res.json({message: 'Exhibit has been deleted.'})
 } )
 
+module.exports = exhibitRouter;

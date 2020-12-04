@@ -10,6 +10,9 @@ import ProfilePic from '../../../../assets/images/prof-pic.JPEG'
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  const getUserId = () => {
+    return user.sub.replace('auth0|', '')
+  }
 
   return (
     isAuthenticated && ( 
@@ -33,7 +36,8 @@ const Profile = () => {
               xs={12} sm={12} lg={12} xl={12}
               className="prof-details">
               <h2 className="prof-name">{user.nickname}</h2>
-              <button className="edit-prof"><Link to={{pathname: `/user/${user.id}/edit`}}>EDIT ACCOUNT</Link></button>
+                {console.log(user)}
+              <button className="edit-prof"><Link to={{pathname: `user/${getUserId()}/edit`}}>EDIT ACCOUNT</Link></button>
              </Col>
            </Row>
            <Row>

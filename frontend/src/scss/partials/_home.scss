@@ -33,14 +33,34 @@
 .user-pic {
     width: 200px;
 }
-
+.example-div{
+    height: 100px;
+    .example-img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    } 
+}
+.example-overlay{
+    display: flex;
+    position: absolute;
+    font-family: 'Simonetta';
+    z-index: 2;
+    bottom: 0;
+    color: #000;
+    right: 2%;
+    background-color: rgba(255,255,255,.6);
+    border-radius: 2px;
+    text-align: right;
+}
 .user-col {
     align-self: center;
+    text-align:center;
 }
 
 .prof-details {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     .prof-name, .edit-prof {
         margin: 1rem 1rem;

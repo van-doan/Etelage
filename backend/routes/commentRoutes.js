@@ -41,3 +41,6 @@ commentRouter.delete('/:id', async (req, res) => {
   await Comment.remove({_id: req.params.id})
   res.json({message: 'Comment has been deleted.'})
 });
+
+
+module.exports = commentRouter;

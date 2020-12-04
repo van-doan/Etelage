@@ -1,5 +1,10 @@
 import React from 'react'
 import API from '../../../../config/API'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class UserEditForm extends React.Component {
     state ={
@@ -13,21 +18,24 @@ class UserEditForm extends React.Component {
     }
 
     componentDidMount() {
-        API.getUser(this.props.match.params.id)
-        .then(res=> this.setState({
-            username: res.username, 
-        })
+        console.log(this.props.match.params.id)
+        API.getUserById(this.props.match.params.id)
+        .then(res=> {
+            console.log(res)
+            this.setState({
+                username: res.username, 
+            })
+        }
     )}
 
     handleSubmit = event => {
         event.preventDefault();
         API.updateUser(
-            {user: this.state}, this.props.user.id)
+            {user: this.state}, this.props.match.params.id)
         .then(resp=> this.redirecToUpdatedUser(resp))
     }
 
     redirectToUpdatedUser = response => {
-        this.props.userEditAccountParams(response)
         this.props.history.push(`/users/${response.id}`)
     }
 
@@ -40,7 +48,6 @@ class UserEditForm extends React.Component {
           <Col
             className="proform-col">
               <h1 className="proform-header">Edit your profile</h1> <button className="outline-dark" onClick={()=>this.props.history.goBack()}>Cancel</button>
-              <button className="cancel-edit" onClick={()=> this.props.history.goBack()}>Cancel</button>
              <Form
               onSubmit={this.handleSubmit}>
                <Form.Group 
@@ -52,7 +59,7 @@ class UserEditForm extends React.Component {
                  </Form.Label>
                  <Form.Control 
                   type="text" 
-                  name="title"
+                  name="username"
                   value={this.state.username}
                   placeholder="Username" 
                   onChange={this.handleChange}/>
