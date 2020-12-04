@@ -45,7 +45,7 @@ exhibitRouter.get('/:userId', async (req, res) => {
 // @desc    U => Update User Exhibits
 // @method  PUT 
 // @route   api/exhibit/id
-exhibitRouter.put('/:id', async (req, res) => {
+exhibitRouter.put('/:id/edit', async (req, res) => {
   let exhibit = await UserExhibit.findByIdAndUpdate(req.params.id, req.body)
   res.json(exhibit)
 })  

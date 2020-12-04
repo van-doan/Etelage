@@ -43,7 +43,7 @@ const ProfileTabs = () => {
             <Tab.Pane 
               eventKey="second"
               className="likes-content">
-                User Liked Content Shows Here
+                You haven't liked any posts yet :(
             </Tab.Pane>
           </Tab.Content>
         </Col>

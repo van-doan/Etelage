@@ -39,19 +39,19 @@ const Profile = () => {
               className="prof-statistics"
               xs={4} sm={4} lg={4} xl={4}>
              <h4 className="prof-stats">SHOWS</h4>             
-              <h5 className="stat"><a href="">5</a></h5>
+              <h5 className="stat"><a href="">0</a></h5>
            </Col>
            <Col
               className="prof-statistics"
               xs={4} sm={4} lg={4} xl={4}>
               <h4 className="prof-stats">FOLLOWING</h4>
-              <h5 className="stat"><a href="">20</a></h5>
+              <h5 className="stat"><a href="">0</a></h5>
              </Col>
            <Col
               className="prof-statistics"
               xs={4} sm={4} lg={4} xl={4}>
               <h4 className="prof-stats">FOLLOWERS</h4>
-              <h5 className="stat"><a href="">970</a></h5>
+              <h5 className="stat"><a href="">0</a></h5>
              </Col>
            </Row>
          </Col>         

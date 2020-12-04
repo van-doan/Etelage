@@ -63,7 +63,7 @@ const Home = () => {
             <Tab.Pane 
               eventKey="first"
               className="feed-content">
-              Feed Component Will Go Here
+              Follow other users to see their most recent exhibits!
             </Tab.Pane>
             <Tab.Pane 
               eventKey="second"
@@ -73,12 +73,12 @@ const Home = () => {
             <Tab.Pane 
               eventKey="third"
               className="notif-content">
-              Notifications Component Will Go Here
+              Looks like you don't have any notifications yet!
             </Tab.Pane>
             <Tab.Pane 
               eventKey="fourth"
               className="rec-content">
-              Recommended Component Will Go Here
+              Come back when you've created at least 2 exhibits to see recommended exhibits.
             </Tab.Pane>
           </Tab.Content>
         </Col>

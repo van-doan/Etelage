@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { useHistory } from "react-router-dom";
 import SearchResults from "../sections/SearchResults";
 import axios from 'axios'
@@ -50,20 +52,30 @@ function Searching(props) {
   return (
       <Container 
         fluid 
-        className="explore-container my-5">
-        <div className="search-art">
+        className="search-container my-5">
+        <Row 
+          className="search-row">
+            <Col
+              className="search-col"
+              xs={12} sm={12} lg={12} xl={12}>
                 <div className="search-form">
                 <h1 className="search-header">Search for artwork</h1> 
                 <form onSubmit={handleSubmit}>
-                  <input type="text" name="searchQuery" placeholder="art, contemporary, Banksy..." value={value} onChange={handleChange} />
-                  <input type="submit" value="search" disabled={!isEnabled} />
+                  <input className="query" type="text" name="searchQuery" placeholder="art, contemporary, Banksy..." value={value} onChange={handleChange} />
+                  <input className="search" type="submit" value="search" disabled={!isEnabled} />
                 </form>
               </div>
-            </div>
-          {data ? 
-          <h1>Showing search results for {data.q}...</h1> : "No results for your search query - try again."
-          }
-          {renderSearchResults()}
+            </Col>
+            <Col
+              className="results-col"
+              xs={12} sm={12} lg={12} xl={12}>
+            {data ? 
+            <h1 className="result-header">Showing search results for {data.q}...</h1> : 
+            <span className="results">Don't see any results? Use the search bar above.</span>
+            }
+            {renderSearchResults()}
+            </Col>
+          </Row>
       </Container>
   );
 }

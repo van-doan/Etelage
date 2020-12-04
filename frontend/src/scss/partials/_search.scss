@@ -1,0 +1,51 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+    font-family: 'Simonetta', cursive;
+    padding-right: 0;
+    padding-left: 0;
+    .search-row{
+        width: 100%;
+        .results-col {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .result-header {
+                width: 100%;
+            }
+            .explore-div {
+                padding: 0 3px;
+            }
+        }
+        .search-col {
+            background-image: url(../../assets/images/monet-bg.jpg);
+            background-position: center;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .query {
+                border-color: #000;
+                border-style: solid;
+                margin: 0 1rem;
+                width: 300px;
+                font-family: 'Spartan';
+                font-size: 14px;
+                padding: 2px 2px;
+            }
+            .search {
+                background-color: #fff;
+                border-color: #000;
+                border-style: solid;
+                font-family: 'Spartan';
+                font-size: 14px;
+                padding: 2px 4px;
+            }
+        }
+    }
+}
