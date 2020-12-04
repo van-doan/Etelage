@@ -57,7 +57,7 @@ Explore Artwork
 
 ## Coming soon...
 * Full social interaction functionality (comments, likes, following, unfollowing)
-* Curate exhibits in a virtual setting using React 360
+* Curate exhibits in a virtual setting using Three.js
 * Incorporate styling animations with Framer
 * Algo development for feed customization
 * Mobile responsiveness
