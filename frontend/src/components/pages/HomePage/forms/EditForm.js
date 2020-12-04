@@ -32,11 +32,12 @@ class UserEditForm extends React.Component {
         event.preventDefault();
         API.updateUser(
             {user: this.state}, this.props.match.params.id)
-        .then(resp=> this.redirecToUpdatedUser(resp))
+        .then(resp=> this.redirectToUpdatedUser(resp))
     }
 
     redirectToUpdatedUser = response => {
-        this.props.history.push(`/users/${response.id}`)
+        console.log(response)
+        this.props.history.push(`/home`)
     }
 
     render(){
@@ -47,7 +48,7 @@ class UserEditForm extends React.Component {
           className="proform-row">
           <Col
             className="proform-col">
-              <h1 className="proform-header">Edit your profile</h1> <button className="outline-dark" onClick={()=>this.props.history.goBack()}>Cancel</button>
+              <h1 className="proform-header">EDIT YOUR PROFILE</h1> 
              <Form
               onSubmit={this.handleSubmit}>
                <Form.Group 
@@ -67,6 +68,7 @@ class UserEditForm extends React.Component {
                <Button variant="outline-dark" type="submit">
                   Update
               </Button>
+              <Button variant="outline-danger" onClick={()=>this.props.history.goBack()}>Cancel</Button>
              </Form> 
           </Col>
           </Row>

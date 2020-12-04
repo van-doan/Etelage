@@ -1,0 +1,17 @@
+.proform-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    .proform-header {
+        font-family: 'Trykker', serif;
+    }
+    .proform-label {
+        font-family: 'Source Code Pro', monospace;
+    }
+    .btn {
+        margin: 0 1rem;
+    }
+}

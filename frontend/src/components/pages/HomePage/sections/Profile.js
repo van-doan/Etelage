@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom'
+import API from '../../../../config/API'
 
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
@@ -9,10 +10,18 @@ import ProfileTabs from '../sections/ProfileTabs'
 import ProfilePic from '../../../../assets/images/prof-pic.JPEG'
 
 const Profile = () => {
+  const [username, setUsername] = useState();
   const { user, isAuthenticated } = useAuth0();
   const getUserId = () => {
     return user.sub.replace('auth0|', '')
   }
+
+  useEffect(() => {
+      API.getUserById(getUserId())
+      .then(res=> {
+        setUsername(res.username)
+      })
+    })
 
   return (
     isAuthenticated && ( 
@@ -35,8 +44,7 @@ const Profile = () => {
              <Col
               xs={12} sm={12} lg={12} xl={12}
               className="prof-details">
-              <h2 className="prof-name">{user.nickname}</h2>
-                {console.log(user)}
+              <h2 className="prof-name">{username}</h2>
               <button className="edit-prof"><Link to={{pathname: `user/${getUserId()}/edit`}}>EDIT ACCOUNT</Link></button>
              </Col>
            </Row>
