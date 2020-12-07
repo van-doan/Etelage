@@ -49,3 +49,23 @@
         }
     }
 }
+
+.modal-content {
+    flex-direction: column;
+    .modal-header {
+        flex-direction: row;
+        font-family: 'Spartan';
+    }
+    .modal-art-desc, .modal-art-title {
+        text-align: center;
+    }
+    .modal-art-title {
+        font-family: 'Simonetta', cursive;
+    }
+    .modal-art-desc {
+        font-family: 'Simonetta', cursive;
+    }
+    .modal-art-form {
+        font-family: 'Simonetta', cursive;
+    }
+}

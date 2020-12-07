@@ -47,41 +47,29 @@ const getExhibits = () =>
       console.log(err)
     })
 
-const getExhibitById = (id) => 
-  axios
-    .get(`${EXHIBIT_URL}`)
-    .then((res) => res.json())
-    .catch((err) =>  {
-      console.log(err)
-    })
+const getExhibitById = async (id) => 
+  {
+    let res = await axios
+    .get(`{${EXHIBIT_URL}/${id}`)
+    return res.data;
+  }
 
-const newExhibit = exhibitDetails => {
-  return axios({
-    method: 'POST',
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ 
-      exhibit: exhibitDetails
-    })
-    .then((res) => res.json())
-  })
+const newExhibit = async exhibitDetails => {
+  let res = await axios
+    .post(`${EXHIBIT_URL}`, exhibitDetails);
+    return res.data;
 }
 
-const editExhibit = (exhibitDetails, id) => {
-  return axios({
-    method: 'PUT',
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ 
-      exhibit: exhibitDetails 
-    })
-  })
-  .then((res) => res.json())
+const editExhibit = async (exhibitDetails, id) => {
+  let res = await axios
+  .put(`${EXHIBIT_URL}/${id}`, exhibitDetails)
+  return res.data;
 }
 
-const deleteExhibit = (id) => {
-  return axios({
-    method: 'DELETE',
-  })
-  .then((res) => res.json())
+const deleteExhibit = async (id) => {
+  let res = await axios
+  .delete(`${EXHIBIT_URL}/${id}`)
+  return res("Exhibit has been deleted")
 }
 // ***** FEATURE NOT READY ***** //
 
